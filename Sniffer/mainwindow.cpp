@@ -18,7 +18,7 @@ MainWindow::MainWindow(int _argc,char**_argv,QWidget *parent) :
     argc = _argc;
     argv = _argv;
     db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/omidrazzaghi/Sniffer/packets.db");
+    db.setDatabaseName("../Sniffer/packets.db");
     sniffer = new Worker(argc,argv,&db);
     connect(ui->Sniff, &QPushButton::released, this, &MainWindow::SniffWorker);
     connect(ui->Stop,&QPushButton::released,this,&MainWindow::StopSniffing);
